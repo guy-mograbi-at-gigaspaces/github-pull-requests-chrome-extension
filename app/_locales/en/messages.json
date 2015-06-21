@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "github extension",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Displays pull requests and comments",
+    "description": "The description of the application"
+  }
+}

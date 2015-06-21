@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <!-- build:css styles/vendor.css -->
+      <link href="bower_components/materialize/dist/css/materialize.css" rel="stylesheet"/>
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+  </head>
+  <body id="popup" ng-controller="PopupCtrl">
+
+  <div ng-repeat="pr in page track by $index" class="card-panel teal lighten-5">
+      <label>{{pr.head.label}}</label>
+      <a class="blue-text lighten-1" href="{{pr.html_url}}">{{pr.title}}</a> ({{ pr.comments.length + pr.review_comments.length}} comments)
+      <label>{{pr.user.login}} {{pr.updated_at}}</label>
+  </div>
+    <!-- build:js scripts/vendor.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- bower:js -->
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/popup.js -->
+    <script src="scripts/chrome.js"></script>
+    <script src="scripts/popup.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
