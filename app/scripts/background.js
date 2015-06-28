@@ -5,7 +5,7 @@ angular.module('background', ['github', 'chrome']);
 angular.module('background').controller('BackgroundCtrl', ['chrome', 'Github', '$scope', '$interval', '$http', function BackgroundController(chrome, Github, $scope, $interval, $http) {
     console.log('I am background');
 
-    chrome.setDefaultConfig({'version': 1, 'repositories': [{'slug': 'cloudify-cosmo/cloudify-js' } ,{ 'slug':'cloudify-cosmo/cloudify-ui', access_token: chrome.getParameterByName('token')}]});
+    chrome.setDefaultConfig({'version': 1, 'repositories': [{'slug': 'cloudify-cosmo/cloudify-js', access_token: chrome.getParameterByName('access_token') } ,{ 'slug':'cloudify-cosmo/cloudify-ui', access_token: chrome.getParameterByName('access_token')}]});
 
 
     $scope.pullRequests = {};
@@ -34,7 +34,7 @@ angular.module('background').controller('BackgroundCtrl', ['chrome', 'Github', '
             }
 
             if ( pr.review_comments ) {
-                comments += pr.review_comments.length;
+                comments += typeof( pr.review_comments.length ) === 'undefined' ? pr.review_comments : pr.review_comments.length;
             }
         });
         chrome.setBadgeText({text: pullRequestArr.length + '/' + comments });
@@ -87,7 +87,7 @@ angular.module('background').controller('BackgroundCtrl', ['chrome', 'Github', '
         });
     };
 
-    $interval($scope.getData, 1000*60)
+    $interval($scope.getData, 1000*60*2); // poll every 10 minutes.. there's a very low rate limit
 
 
 }]);
