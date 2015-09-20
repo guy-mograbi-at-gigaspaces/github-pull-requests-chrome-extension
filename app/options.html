@@ -67,7 +67,7 @@
         </div>
 
         <div class="col s5 offset-s1">
-            <span ng-repeat="repo in options.details.repositories">
+            <span ng-repeat="repo in options.details.repositories track by $index">
                 <div class="form-field" >
                     <div class="label"><label for="slug_{{$index}}">Slug (owner/name)</label></div>
                     <div class="input" >

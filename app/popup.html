@@ -14,7 +14,7 @@
   <body id="popup" ng-controller="PopupCtrl">
 
   <div ng-repeat="pr in page track by $index" class="card-panel" ng-class="{   'amber lighten-3' :  pr.mergeable && pr.mergeable_state !=='clean', 'teal lighten-5'  : pr.mergeable && pr.mergeable_state === 'clean' , 'red lighten-5': !pr.mergeable}">
-      <label>{{pr.base.repo.full_name}} - {{pr.head.ref}}</label>
+      <label>{{pr.number}}: {{pr.base.repo.full_name}} - {{pr.head.ref}}</label>
       <a class="blue-text lighten-1" href="{{pr.html_url}}" target="_blank">{{pr.title}} : </a> ({{ pr.comments.length + pr.review_comments.length}} comments)
       <label>{{pr.user.login}} {{pr.updated_at}}</label>
   </div>
