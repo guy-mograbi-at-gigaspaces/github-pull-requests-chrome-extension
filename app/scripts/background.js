@@ -29,7 +29,7 @@ angular.module('background').controller('BackgroundCtrl', ['chrome', 'Github', '
         _.each(pullRequestArr, function(pr){
             if ( pr.comments ) {
                 // count only comments that are relevant. if developer fixed the comment, it is no longer relevant.
-                var filtered = _.filter(pr.comments, function(comment){ return comment.position !== null });
+                var filtered = _.filter(pr.comments, function(comment){ return comment.position !== null; });
                 comments += filtered.length;
             }
 
@@ -65,7 +65,7 @@ angular.module('background').controller('BackgroundCtrl', ['chrome', 'Github', '
                     $http.get(pr._links.review_comments.href + '?access_token=' + repo.access_token).then(function( result ){
                         pr.review_comments = result.data;
                     });
-                })
+                });
             }
 
         });

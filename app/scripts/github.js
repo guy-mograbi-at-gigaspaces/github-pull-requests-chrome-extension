@@ -30,7 +30,7 @@ angular.module('github').factory('Github', ['$http',function GithubService( $htt
                         delete result.data.comments;
                         delete result.data.review_comments;
                         _.merge(pr, result.data );
-                    })
+                    });
                 });
                 return result;
             });

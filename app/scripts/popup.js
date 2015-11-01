@@ -6,10 +6,27 @@ angular.module('myapp').controller('PopupCtrl', ['$http', '$scope', '$timeout', 
 
 
     $scope.page = 'hello world';
-    function onUpdate(request, sender, sendResponse) {
+    function onUpdate(request/*, sender, sendResponse*/) {
         console.log('got message', request.type);
         if (request.type === 'pull-requests') {
-            $scope.page = request.data;
+
+            // aggregate by jira issue or branch name
+            $scope.groupedPrs = _.groupBy(request.data, function( pr ){
+                var branchName = pr.head.ref;
+                var result = branchName;
+
+                if ( branchName.indexOf('CFY') === 0){
+                    var args = branchName.split('-');
+                    return args[0] + '-' + args[1];
+                }
+
+                pr.groupId = result;
+
+            });
+
+            $scope.page = _.map( $scope.groupedPrs, function(value,key){
+                return { groupId: key, prs: value };
+            });
         }
     }
 
