@@ -11,8 +11,7 @@ in order to install the plugin you need to do the following:
  - Extract the zip file
  - Click on the settings button 
  - choose `more-tools --> extension`
- - click on `load unpacked extension`
- - click on the extracted directory
+ - drag and drop the zip file there
 
 
 
