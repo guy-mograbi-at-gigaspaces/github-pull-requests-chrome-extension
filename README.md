@@ -7,7 +7,7 @@ How to install
 ---------------
 
 in order to install the plugin you need to do the following: 
- - Download the release zip. [download latest](https://github.com/guy-mograbi-at-gigaspaces/github-pull-requests-chrome-extension/releases/download/v0.0.372/github-pull-requests-chrome-extension-0.0.372.zip)  TBD
+ - Download the release zip. [download latest](https://github.com/guy-mograbi-at-gigaspaces/github-pull-requests-chrome-extension/releases/download/v0.0.372/github-pull-requests-chrome-extension-0.0.372.zip)
  - Extract the zip file
  - Click on the settings button 
  - choose `more-tools --> extension`
