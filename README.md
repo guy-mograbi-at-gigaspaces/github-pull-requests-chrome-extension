@@ -18,7 +18,7 @@ in order to install the plugin you need to do the following:
 Roadmap
 -------
 
- - Expose number of pull requests/comments in badge
- - Display pull requests and their comments in popup
- - support private repositories
- - show notifications on badge 
+ - ~~Expose number of pull requests/comments in badge~~
+ - ~~Display pull requests and their comments in popup~~
+ - ~~support private repositories~~
+ - ~~show notifications on badge~~
